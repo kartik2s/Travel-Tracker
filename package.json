@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "ejs": "^5.0.2",
     "express": "^5.2.1",
     "pg": "^8.20.0"
   }
