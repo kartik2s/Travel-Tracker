@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Travel</title>
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 
 <body>
@@ -376,7 +377,7 @@
     <script>
         const country_codes = "<%= countries%>".split(",");
         console.log(typeof("<%=countries%>"));
-        country_codes.forEach((code) =>{
+        country_codes.forEach(code =>{
             document.getElementById(code).style.fill = 'teal'
         });
     </script>
