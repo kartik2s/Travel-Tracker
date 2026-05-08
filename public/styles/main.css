@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #001f3f);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem 1rem;
+    gap: 2rem;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    animation: slideDown 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+input[type="text"] {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    width: 450px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.5);
+    transform: scale(1.02);
+}
+
+button {
+    padding: 12px 30px;
+    width: 100px;
+    border: none;
+    border-radius: 8px;
+    background-color: teal;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 128, 128, 0.4);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    background-color: #006666;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 128, 128, 0.6);
+}
+
+.total-count {
+    background: rgba(0, 128, 128, 0.2);
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 128, 128, 0.5);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    animation: fadeIn 1.2s ease-in forwards;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ag-canvas {
+    width: 100%;
+    max-width: 1100px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.ag-canvas_svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.6));
+}
+
+.ag-canvas_svg path {
+    fill: #2c3e50; 
+    stroke: #1a1a2e; 
+    stroke-width: 1px;
+    transition: fill 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.ag-canvas_svg path:hover {
+    fill: #34495e;
+    filter: brightness(1.2);
+}
