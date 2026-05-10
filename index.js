@@ -86,12 +86,12 @@ app.post("/add", async (req, res) => {
 });
 
 app.post("/user", async (req, res) => {
-    if (req.body.add === "new") {
-        res.render("new.ejs");
-    } else {
-        currentUserId = req.body.user;
-        res.redirect("/");
-    }
+    currentUserId = req.body.user;
+    res.redirect("/");
+});
+
+app.get("/new-user", (req, res) => {
+    res.render("new.ejs");
 });
 
 app.post("/new", async (req, res) => {
@@ -103,6 +103,18 @@ app.post("/new", async (req, res) => {
     );
     const id = result.rows[0].id;
     currentUserId = id;
+
+    res.redirect("/");
+});
+
+app.post("/delete-user", async (req, res) => {
+
+    const id = req.body.id;
+    currentUserId = 1;
+    await db.query(
+        "DELETE FROM users WHERE id = $1",
+        [id]
+    );
 
     res.redirect("/");
 });

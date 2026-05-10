@@ -8,6 +8,34 @@ body {
     text-align: center;
 }
 
+.user-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap:0;
+    margin-bottom:10px;
+}
+
+.user-btn{
+    border:none;
+    padding:10px 18px;
+    background:green;
+    color:white;
+    border-radius:8px 0 0 8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.delete-btn{
+    border:none;
+    padding:10px 14px;
+    background:#2c3e50;
+    color:#ff4d6d;
+    border-radius:0 8px 8px 0;
+    cursor:pointer;
+    font-size:18px;
+}
+
 h1, h2 {
     color: #2c3e50;
     margin-bottom: 15px;
@@ -54,7 +82,7 @@ label[for="tab"] {
 }
 
 form {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 input[type="text"] {
