@@ -4,10 +4,11 @@ A full-stack travel tracking web app where users can add and track visited count
 
 ## Features
 - Track visited countries
-- Multiple user/family support
+- Add and delete users/family members
 - Dynamic world map coloring
 - PostgreSQL database integration
 - EJS templating
+- Responsive user tabs UI
 
 ## Tech Stack
 - Node.js
@@ -15,6 +16,7 @@ A full-stack travel tracking web app where users can add and track visited count
 - PostgreSQL
 - EJS
 - HTML/CSS
+- JavaScript
 
 ## Run Locally
 
