@@ -40,6 +40,14 @@ async function getCurrentUser() {
 app.get("/", async (req, res) => {
     const countries = await checkVisited();
     const currentUser = await getCurrentUser();
+    if (!currentUser) {
+        return res.render("index.ejs", {
+            countries: [],
+            total: 0,
+            users: [],
+            color: "teal"
+        });
+    }
     console.log(countries);
     res.render("index.ejs", {
         countries: countries,
@@ -108,14 +116,22 @@ app.post("/new", async (req, res) => {
 });
 
 app.post("/delete-user", async (req, res) => {
-
     const id = req.body.id;
-    currentUserId = 1;
+    await db.query(
+        "DELETE FROM visited_countries WHERE user_id = $1",
+        [id]
+    );
     await db.query(
         "DELETE FROM users WHERE id = $1",
         [id]
     );
-
+    const result = await db.query("SELECT * FROM users");
+    if (result.rows.length > 0) {
+        currentUserId = result.rows[0].id;
+    }
+    if (result.rows.length === 1) {
+        return res.send("At least one user required");
+    }
     res.redirect("/");
 });
 
